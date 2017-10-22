@@ -20,7 +20,7 @@ script:
   - make CTEST_OUTPUT_ON_FAILURE=1 test
 
 after_success:
-  - app/app ../in1.txt
+  - app/app ../../in1.txt
   - make gcov
   - make lcov
   - bash <(curl -s https://codecov.io/bash) -X gcov
