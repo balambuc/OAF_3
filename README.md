@@ -1,5 +1,9 @@
 # OAF_3
 
+[![Build Status](https://travis-ci.org/balambuc/OAF_3.svg?branch=master)](https://travis-ci.org/balambuc/OAF_3)
+[![codecov](https://codecov.io/gh/balambuc/OAF_3/branch/master/graph/badge.svg)](https://codecov.io/gh/balambuc/OAF_3)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2669334a385a434b9c271f8bebbde159)](https://www.codacy.com/app/balambuc/OAF_3?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=balambuc/OAF_3&amp;utm_campaign=Badge_Grade)
+
 7. Készítsünk C++ programot a következő feladat megoldására!
 A hobbi állatoknak az életkedvük megőrzéséhez a táplálékon túl egyéb dolgokra is
 szükségük van: a halaknak oxigén dús, megfelelő hőmérsékletű vízre; a madaraknak tágas,
