@@ -1,9 +1,14 @@
 #include <iostream>
+#include <fstream>
+#include "Simulator.h"
 
 
 using namespace std;
 
 int main(int arc, char** argv) {
-    cout << "Hello World!" << endl;
+    string infile;
+    cin >> infile;
+    cout << Simulator(infile).run();
+
     return 0;
 }
