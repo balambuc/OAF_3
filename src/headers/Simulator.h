@@ -15,13 +15,14 @@ private:
     std::fstream m_file;
     Animal** m_animals;
     void load();
-    std::stringstream& print_all() const;
+
+    std::string print_all() const;
     void do_all(Animal::MOOD mood) const;
 
 public:
-    explicit Simulator(std::string file) { m_file.open(file);}
+    explicit Simulator(char* file) { m_file.open(file);}
 
-    std::stringstream& run();
+    std::string run();
     Animal* create(std::istream& is);
 };
 

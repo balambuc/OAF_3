@@ -18,6 +18,7 @@ script:
   - mkdir build && cd build
   - cmake .. -DENABLE_COVERAGE=On && make
   - make CTEST_OUTPUT_ON_FAILURE=1 test
+  - ls -lra
 
 after_success:
   - make gcov

@@ -2,20 +2,19 @@
 #include "Simulator.h"
 
 
-std::stringstream& Simulator::run() {
+std::string Simulator::run() {
     std::stringstream out;
     if(!m_file)
-    {
-        out << "HIBA: Nemletezo fajl. Az alkalmazas kilep";
-        return out;
-    }
+        return "HIBA: Nemletezo fajl. Az alkalmazas kilep";
 
     load();
     out.str("Az allatok eletkedve a kovetkezokepp alakult: \n");
-    char* kedvek = nullptr;
+    out << "\n0. nap\n" << print_all();
+    char* kedvek;
     m_file >> kedvek;
     for (int i = 0; i < std::strlen(kedvek); ++i)
     {
+        out << '\n' << (i + 1) << ". nap - " << kedvek[i] << '\n';
         switch (kedvek[i])
         {
             case 'j':
@@ -32,7 +31,7 @@ std::stringstream& Simulator::run() {
                 break;
         }
     }
-    return out;
+    return out.str();
 }
 
 void Simulator::load() {
@@ -68,11 +67,11 @@ Animal* Simulator::create (std::istream& is) {
     return animal;
 }
 
-std::stringstream& Simulator::print_all() const {
+std::string Simulator::print_all() const {
     std::stringstream ss;
     for (int i = 0; i < m_n_animals; ++i)
         ss << *m_animals[i];
-    return ss;
+    return ss.str();
 }
 
 void Simulator::do_all(Animal::MOOD mood) const {

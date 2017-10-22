@@ -18,6 +18,7 @@ public:
         good, avg, bad
     };
     Animal(int starting_vim, std::string name) : m_vim(starting_vim), m_name(std::move(name)) {}
+
     virtual void update_vim(MOOD mood) = 0;
     friend std::ostream& operator<<(std::ostream& os, const Animal& anim);
 };
@@ -30,6 +31,7 @@ private:
 
 public:
     Fish(int starting_vim, std::string name) : Animal(starting_vim, std::move(name)) {}
+
     void update_vim(Animal::MOOD mood) override;
 };
 
@@ -41,6 +43,7 @@ private:
 
 public:
     Bird(int starting_vim, std::string name) : Animal(starting_vim, std::move(name)) {}
+
     void update_vim(Animal::MOOD mood) override;
 };
 
@@ -52,6 +55,7 @@ private:
 
 public:
     Dog(int starting_vim, std::string name) : Animal(starting_vim, std::move(name)) {}
+
     void update_vim(Animal::MOOD mood) override;
 };
 

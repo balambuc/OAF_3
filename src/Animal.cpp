@@ -20,7 +20,7 @@ std::ostream& operator<<(std::ostream& os, const Animal& animal) {
 }
 
 void Fish::update_vim(Animal::MOOD mood) {
-    if(m_vim == 0 || m_vim  == 100)
+    if(m_vim == 0)
         return;
 
     switch (mood)
@@ -43,7 +43,7 @@ void Fish::update_vim(Animal::MOOD mood) {
 }
 
 void Bird::update_vim(Animal::MOOD mood) {
-    if(m_vim == 0 || m_vim  == 100)
+    if(m_vim == 0)
         return;
 
     switch (mood)
@@ -66,7 +66,7 @@ void Bird::update_vim(Animal::MOOD mood) {
 }
 
 void Dog::update_vim(Animal::MOOD mood) {
-    if(m_vim == 0 || m_vim  == 100)
+    if(m_vim == 0)
         return;
 
     switch (mood)
