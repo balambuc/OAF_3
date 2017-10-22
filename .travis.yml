@@ -18,9 +18,9 @@ script:
   - mkdir build && cd build
   - cmake .. -DENABLE_COVERAGE=On && make
   - make CTEST_OUTPUT_ON_FAILURE=1 test
-  - ls -lra
 
 after_success:
+  - app/app ../in1.txt
   - make gcov
   - make lcov
   - bash <(curl -s https://codecov.io/bash) -X gcov
