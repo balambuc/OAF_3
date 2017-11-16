@@ -18,9 +18,12 @@ private:
 
     std::string print_all() const;
     void do_all(Animal::MOOD mood) const;
+    Simulator(const Simulator&);
+    Simulator& operator=(const Simulator&);
 
 public:
-    explicit Simulator(char* file) { m_file.open(file);}
+    explicit Simulator(const char* file) : m_n_animals(0), m_file(), m_animals(new Animal*[0]) { m_file.open(file);}
+
 
     std::string run();
     Animal* create(std::istream& is);

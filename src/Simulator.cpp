@@ -10,9 +10,9 @@ std::string Simulator::run() {
     load();
     out.str("Az allatok eletkedve a kovetkezokepp alakult: \n");
     out << "\n0. nap\n" << print_all();
-    char* kedvek;
+    std::string kedvek;
     m_file >> kedvek;
-    for (int i = 0; i < std::strlen(kedvek); ++i)
+    for (int i = 0; i < std::strlen(kedvek.c_str()); ++i)
     {
         out << '\n' << (i + 1) << ". nap - " << kedvek[i] << '\n';
         switch (kedvek[i])

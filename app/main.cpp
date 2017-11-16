@@ -5,13 +5,13 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-    char* infile;
+    string infile;
     if(argc == 1)
         cin >> infile;
     else
         infile = argv[1];
 
-    cout << Simulator(infile).run();
+    cout << Simulator(infile.c_str()).run();
 
     return 0;
 }

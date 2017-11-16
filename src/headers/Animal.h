@@ -21,6 +21,7 @@ public:
 
     virtual void update_vim(MOOD mood) = 0;
     friend std::ostream& operator<<(std::ostream& os, const Animal& anim);
+    virtual ~Animal() = default;
 };
 
 class Fish : public Animal {
