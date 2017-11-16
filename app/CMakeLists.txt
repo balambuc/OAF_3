@@ -8,4 +8,3 @@ add_executable(app
 
 target_link_libraries(app src)
 
-add_coverage(app)

@@ -1,28 +1,22 @@
 language: cpp
 
-compiler:  
-    - gcc
+sudo: false
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - lcov
+compiler: gcc
 
 branches:
-  only:
-  - master
+  only: master
 
-script:
-  - mkdir build && cd build
-  - cmake .. -DENABLE_COVERAGE=On && make
-  - make CTEST_OUTPUT_ON_FAILURE=1 test
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+
+script: make && make CTEST_OUTPUT_ON_FAILURE=1 test
 
 after_success:
-  - app/app ../../in1.txt
-  - make gcov
-  - make lcov
+  - cd ..
+  - gcov src/*.cpp -o build/src/CMakeFiles/src.dir/
   - bash <(curl -s https://codecov.io/bash) -X gcov
 
 notifications:
