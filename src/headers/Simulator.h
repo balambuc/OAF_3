@@ -23,8 +23,7 @@ private:
 
 public:
     explicit Simulator(const char* file) : m_n_animals(0), m_file(), m_animals(new Animal*[0]) { m_file.open(file);}
-
-
+    
     std::string run();
     Animal* create(std::istream& is);
 };

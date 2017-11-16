@@ -12,7 +12,7 @@ std::string Simulator::run() {
     out << "\n0. nap\n" << print_all();
     std::string kedvek;
     m_file >> kedvek;
-    for (int i = 0; i < std::strlen(kedvek.c_str()); ++i)
+    for (int i = 0; i < static_cast<int>(std::strlen(kedvek.c_str())); ++i)
     {
         out << '\n' << (i + 1) << ". nap - " << kedvek[i] << '\n';
         switch (kedvek[i])
@@ -29,6 +29,8 @@ std::string Simulator::run() {
                 do_all(Animal::MOOD::bad);
                 out << print_all();
                 break;
+            default:
+                break;
         }
     }
     return out.str();
@@ -42,7 +44,7 @@ void Simulator::load() {
 }
 
 Animal* Simulator::create (std::istream& is) {
-    Animal* animal;
+    Animal* animal = nullptr;
 
     char species;
     std::string name;
@@ -61,7 +63,8 @@ Animal* Simulator::create (std::istream& is) {
         case 'K':
             animal = new Dog(vim, name);
             break;
-        default: break; //TODO: replace bad alloc
+        default:
+            break;
     }
 
     return animal;
