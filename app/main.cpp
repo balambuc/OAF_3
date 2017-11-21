@@ -11,7 +11,16 @@ int main(int argc, char** argv) {
     else
         infile = argv[1];
 
-    cout << Simulator(infile.c_str()).run();
+    try
+    {
+        cout << Simulator(infile.c_str()).run();
+    }
+    catch (exception &e)
+    {
+        cout << e.what();
+        return 2;
+    }
+
 
     return 0;
 }

@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(unit_tests
         catch.hpp
         main.cpp
-        integration_test.cpp
+        tests.cpp
         )
 
 target_link_libraries(unit_tests src)

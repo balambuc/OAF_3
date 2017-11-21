@@ -1,0 +1,17 @@
+15
+H	Hal1    78
+H	Hal2	93
+H	Hal3	74
+H	Hal4	5
+H	Hal5	89
+H	Hal6	85
+H	Hal7	62
+H	Hal8	90
+H	Hal9	87
+H   Hal10   100
+M	Madar1	83
+M	Madar2	71
+M	Madar3	66
+K	Kutya1	98
+K	Kutya2	55
+jarrarajarraj

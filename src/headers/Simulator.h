@@ -9,6 +9,10 @@
 #include <Animal.h>
 
 
+class Invalid_File_exception : public std::exception {
+    const char* what() const noexcept override { return "Invalid file!";}
+};
+
 class Simulator {
 private:
     int m_n_animals;
@@ -22,8 +26,8 @@ private:
     Simulator& operator=(const Simulator&);
 
 public:
-    explicit Simulator(const char* file) : m_n_animals(0), m_file(), m_animals(new Animal*[0]) { m_file.open(file);}
-    
+    explicit Simulator(const char* file) : m_n_animals(0), m_file(), m_animals(new Animal* [0]) { m_file.open(file); }
+
     std::string run();
     Animal* create(std::istream& is);
 };

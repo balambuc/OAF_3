@@ -5,7 +5,7 @@
 std::string Simulator::run() {
     std::stringstream out;
     if(!m_file)
-        return "HIBA: Nemletezo fajl. Az alkalmazas kilep";
+        throw *(new Invalid_File_exception);
 
     load();
     out.str("Az allatok eletkedve a kovetkezokepp alakult: \n");
